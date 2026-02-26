@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  zookeeper:
+    image: bitnami/zookeeper:latest
+    ports:
+      - "2181:2181"
+    environment:
+      - ALLOW_ANONYMOUS_LOGIN=yes
+
+  kafka:
+    image: bitnami/kafka:latest
+    ports:
+      - "9092:9092"
+    environment:
+      - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181
+      - ALLOW_PLAINTEXT_LISTENER=yes
+      - KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092
+    depends_on:
+      - zookeeper
+
+  qdrant:
+    image: qdrant/qdrant:latest
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - ./infra/qdrant_storage:/qdrant/storage
+
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+
+  # Placeholder for our custom services to show structure
+  api:
+    build:
+      context: .
+      dockerfile: services/api/Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - KAFKA_BOOTSTRAP_SERVERS=kafka:9092
+      - QDRANT_HOST=qdrant
+    depends_on:
+      - kafka
+      - qdrant
+      - redis
