@@ -6,3 +6,7 @@ def normalize_amharic(text: str) -> str:
     text = re.sub('[ኀኁኂኃኄኅኈ]', 'ሃ', text)
     text = re.sub('[ሠሡሢሣሤሥሦ]', 'ሳ', text)
     return text
+def clean_text(text: str) -> str:
+    text = re.sub(r'\s+', ' ', text).strip()
+    return text
+
