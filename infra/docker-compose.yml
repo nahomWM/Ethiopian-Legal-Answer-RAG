@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  qdrant:
+    image: qdrant/qdrant:latest
+    ports: ['6333:6333', '6334:6334']
+  zookeeper:
+    image: confluentinc/cp-zookeeper:latest
+    environment: {ZOOKEEPER_CLIENT_PORT: 2181}
+  kafka:
+    image: confluentinc/cp-kafka:latest
+    depends_on: [zookeeper]
+    environment: {KAFKA_ADVERTISED_LISTENERS: 'PLAINTEXT://kafka:9092,PLAINTEXT_HOST://localhost:9092'}
