@@ -13,3 +13,5 @@ def clean_text(text: str) -> str:
 def amharic_word_tokenize(text: str):
     return text.split()
 
+STOPS = ['ነው', 'እና', 'ወደ'] # Sample Amharic stopwords
+
