@@ -10,3 +10,6 @@ def clean_text(text: str) -> str:
     text = re.sub(r'\s+', ' ', text).strip()
     return text
 
+def amharic_word_tokenize(text: str):
+    return text.split()
+
