@@ -9,3 +9,5 @@ def setup_logger(name: str):
     handler.setFormatter(formatter)
     logger.addHandler(handler)
     return logger
+def log_info(logger, msg): logger.info(msg)
+
