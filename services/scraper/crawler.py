@@ -14,3 +14,6 @@ class LawCrawler:
     def fetch_detail(self, url):
         return 'ኢትዮጵያ የብዙ ብሔር ብሔረሰቦች እና ህዝቦች ሀገር ናት።'
 
+import time
+# Adding retry logic to crawler
+
