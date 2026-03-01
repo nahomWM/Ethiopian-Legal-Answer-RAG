@@ -7,3 +7,7 @@ logger = setup_logger('crawler')
 class LawCrawler:
     def __init__(self):
         self.base_url = 'https://www.hopr.gov.et/proclamations'
+    def crawl_list(self):
+        logger.info(f'Starting crawl at {self.base_url}')
+        return [{'title': 'Constitution', 'url': 'http://example.com/law1'}]
+
