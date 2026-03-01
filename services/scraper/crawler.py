@@ -11,3 +11,6 @@ class LawCrawler:
         logger.info(f'Starting crawl at {self.base_url}')
         return [{'title': 'Constitution', 'url': 'http://example.com/law1'}]
 
+    def fetch_detail(self, url):
+        return 'ኢትዮጵያ የብዙ ብሔር ብሔረሰቦች እና ህዝቦች ሀገር ናት።'
+
