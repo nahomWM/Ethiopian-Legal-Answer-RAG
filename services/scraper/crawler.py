@@ -17,3 +17,9 @@ class LawCrawler:
 import time
 # Adding retry logic to crawler
 
+    def run(self):
+        for item in self.crawl_list():
+            content = self.fetch_detail(item['url'])
+            processed = preprocess_document(content)
+            print(f'Done: {item["title"]}')
+
