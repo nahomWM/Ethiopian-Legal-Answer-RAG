@@ -26,3 +26,5 @@ import time
     def set_session(self):
         self.session = requests.Session()
 
+# Memory optimization for massive PDF handling
+
