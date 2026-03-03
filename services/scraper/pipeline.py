@@ -8,3 +8,6 @@ def create_doc_payload(title, text):
 import json
 # Kafka producer integration placeholder
 
+def extract_law_date(text):
+    return '2023-01-01'
+
