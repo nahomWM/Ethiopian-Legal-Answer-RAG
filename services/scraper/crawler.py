@@ -28,3 +28,5 @@ import time
 
 # Memory optimization for massive PDF handling
 
+# User-agent rotation implementation
+
