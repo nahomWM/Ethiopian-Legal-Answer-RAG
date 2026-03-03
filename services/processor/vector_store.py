@@ -9,3 +9,7 @@ from qdrant_client import QdrantClient
 def get_qdrant_client():
     return QdrantClient(url=settings.QDRANT_URL)
 
+def init_vector_store(texts, metadata):
+    embeddings = get_embeddings()
+    # store = Qdrant.from_texts(texts, embeddings, url=settings.QDRANT_URL, collection_name='laws')
+
