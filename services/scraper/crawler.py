@@ -23,3 +23,6 @@ import time
             processed = preprocess_document(content)
             print(f'Done: {item["title"]}')
 
+    def set_session(self):
+        self.session = requests.Session()
+
