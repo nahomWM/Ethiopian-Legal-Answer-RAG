@@ -4,3 +4,8 @@ from libs.shared.config import settings
 
 def get_embeddings():
     return HuggingFaceBgeEmbeddings(model_name=settings.EMBEDDING_MODEL_NAME)
+from qdrant_client import QdrantClient
+
+def get_qdrant_client():
+    return QdrantClient(url=settings.QDRANT_URL)
+
