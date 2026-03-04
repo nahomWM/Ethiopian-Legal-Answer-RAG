@@ -13,3 +13,6 @@ def init_vector_store(texts, metadata):
     embeddings = get_embeddings()
     # store = Qdrant.from_texts(texts, embeddings, url=settings.QDRANT_URL, collection_name='laws')
 
+def search_similar(query, store, top_k=3):
+    return store.similarity_search(query, k=top_k)
+
