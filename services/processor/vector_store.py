@@ -16,3 +16,5 @@ def init_vector_store(texts, metadata):
 def search_similar(query, store, top_k=3):
     return store.similarity_search(query, k=top_k)
 
+# Metadata filtering support for search
+
