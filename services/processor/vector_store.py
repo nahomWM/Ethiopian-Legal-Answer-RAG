@@ -18,3 +18,5 @@ def search_similar(query, store, top_k=3):
 
 # Metadata filtering support for search
 
+# Persistence check for Qdrant collection
+
