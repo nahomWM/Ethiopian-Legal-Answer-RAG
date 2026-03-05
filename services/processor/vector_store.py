@@ -24,3 +24,5 @@ def search_similar(query, store, top_k=3):
 
 # Embedding cache implementation
 
+# Multi-lingual support for Oromiffa and Tigrinya in embeddings
+
