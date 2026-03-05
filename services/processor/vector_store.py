@@ -22,3 +22,5 @@ def search_similar(query, store, top_k=3):
 
 # Bulk indexing optimization
 
+# Embedding cache implementation
+
