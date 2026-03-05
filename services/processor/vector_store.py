@@ -20,3 +20,5 @@ def search_similar(query, store, top_k=3):
 
 # Persistence check for Qdrant collection
 
+# Bulk indexing optimization
+
