@@ -5,3 +5,5 @@ beautifulsoup4==4.12.2
 requests==2.31.0
 pydantic-settings==2.1.0
 kafka-python==2.0.2
+faiss-cpu==1.7.4
+
