@@ -21,3 +21,5 @@ def run_query(chain, query):
 
 # Integration of local Llama-2 via LangChain LlamaCpp
 
+# Error handling for LLM API timeouts
+
