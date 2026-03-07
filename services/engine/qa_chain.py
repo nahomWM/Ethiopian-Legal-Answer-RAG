@@ -16,3 +16,6 @@ Answer:'''
 def get_custom_prompt():
     return PromptTemplate(template=PROMPT_TEMPLATE, input_variables=['context', 'question'])
 
+def run_query(chain, query):
+    return chain.run(query)
+
