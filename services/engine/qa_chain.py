@@ -13,3 +13,6 @@ Use the context below to answer:
 Question: {question}
 Answer:'''
 
+def get_custom_prompt():
+    return PromptTemplate(template=PROMPT_TEMPLATE, input_variables=['context', 'question'])
+
