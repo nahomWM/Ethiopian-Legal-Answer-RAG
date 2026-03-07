@@ -19,3 +19,5 @@ def get_custom_prompt():
 def run_query(chain, query):
     return chain.run(query)
 
+# Integration of local Llama-2 via LangChain LlamaCpp
+
