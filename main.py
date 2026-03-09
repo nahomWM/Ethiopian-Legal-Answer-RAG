@@ -18,3 +18,5 @@ if __name__ == '__main__':
     if args.mode == 'crawl': handle_crawl()
     elif args.mode == 'ask': handle_ask(args.query)
 
+# Unified logging initialization for the whole project
+
