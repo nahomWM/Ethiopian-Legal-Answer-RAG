@@ -10,3 +10,5 @@ services:
     image: confluentinc/cp-kafka:latest
     depends_on: [zookeeper]
     environment: {KAFKA_ADVERTISED_LISTENERS: 'PLAINTEXT://kafka:9092,PLAINTEXT_HOST://localhost:9092'}
+# Adding healthchecks to Kafka services
+
