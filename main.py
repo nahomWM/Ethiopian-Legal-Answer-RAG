@@ -20,3 +20,5 @@ if __name__ == '__main__':
 
 # Unified logging initialization for the whole project
 
+# Progress bars implementation for indexing
+
