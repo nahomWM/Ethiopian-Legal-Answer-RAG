@@ -22,3 +22,5 @@ if __name__ == '__main__':
 
 # Progress bars implementation for indexing
 
+# Multi-threaded processing for faster law indexing
+
