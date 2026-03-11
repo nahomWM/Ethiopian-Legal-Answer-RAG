@@ -24,3 +24,5 @@ if __name__ == '__main__':
 
 # Multi-threaded processing for faster law indexing
 
+# CLI help text improvements and usage examples
+
