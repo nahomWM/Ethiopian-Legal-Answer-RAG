@@ -1,10 +1,18 @@
+from langchain.llms import Ollama, HuggingFaceHub
+from libs.shared.utils import settings
 from langchain.chains import RetrievalQA
-from langchain.chat_models import ChatOpenAI
-from libs.shared.config import settings
 
 def get_qa_chain(vector_store):
-    llm = ChatOpenAI(temperature=0, model_name='gpt-4', openai_api_key=settings.OPENAI_API_KEY)
-    return RetrievalQA.from_chain_type(llm=llm, chain_type='stuff', retriever=vector_store.as_retriever())
+    if settings.HUGGINGFACEHUB_API_TOKEN:
+        llm = HuggingFaceHub(
+            repo_id=settings.HF_MODEL_ID,
+            huggingfacehub_api_token=settings.HUGGINGFACEHUB_API_TOKEN,
+            model_kwargs={"temperature": 0.1, "max_length": 512}
+        )
+    else:
+        llm = Ollama(base_url=settings.OLLAMA_BASE_URL, model=settings.OLLAMA_MODEL)
+    
+    return RetrievalQA.from_chain_type(llm=llm, chain_type="stuff", retriever=vector_store.as_retriever())
 from langchain.prompts import PromptTemplate
 
 PROMPT_TEMPLATE = '''You are a legal expert on Ethiopian law. 
